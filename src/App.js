@@ -1,7 +1,12 @@
+import Background from "./component/Background";
+import Foreground from "./component/Foreground";
+import "./styles/index.css";
+
 function App() {
   return (
-    <div>
-      <h1>Docs.</h1>
+    <div className="app">
+      <Background />
+      <Foreground />
     </div>
   );
 }
