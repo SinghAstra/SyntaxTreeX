@@ -7,10 +7,11 @@ function App() {
   const [socketId, setSocketId] = useState(null);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [room, setRoom] = useState(null);
+  const [room, setRoom] = useState("");
 
   useEffect(() => {
     const newSocket = io("https://chat-app-nuar.onrender.com");
+    // const newSocket = io("http://localhost:5000");
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
@@ -29,6 +30,7 @@ function App() {
   const handleJoinRoom = () => {
     if (socket) {
       socket.emit("join-room", room);
+      console.log("Joined Room ", room);
     }
   };
 
@@ -38,6 +40,7 @@ function App() {
     }
     if (socket) {
       socket.emit("message", message, room);
+      console.log("Sent Message ", message);
     }
     setMessage("");
   };

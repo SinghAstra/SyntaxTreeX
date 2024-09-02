@@ -22,9 +22,19 @@ app.get("/", (req, res) => {
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
-  socket.on("message", (data) => {
-    console.log(`Message received ${data} from ${socket.id}`);
-    io.emit("receive-message", data);
+  socket.on("message", (message, room) => {
+    if (room) {
+      console.log(`Message received ${message} from ${socket.id} @${room}`);
+      io.to(room).emit("receive-message", message);
+    } else {
+      console.log(`Message received ${message} from ${socket.id}`);
+      io.emit("receive-message", message);
+    }
+  });
+
+  socket.on("join-room", (room) => {
+    console.log(`${socket.id} joined room ${room}`);
+    socket.join(room);
   });
 
   socket.on("disconnect", () => {
