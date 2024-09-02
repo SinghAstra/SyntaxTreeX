@@ -16,6 +16,7 @@
   overflow-y: auto;
 }
 
+.room,
 .socketId {
   text-align: center;
   padding: 4px;

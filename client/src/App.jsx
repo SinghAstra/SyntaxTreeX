@@ -7,9 +7,10 @@ function App() {
   const [socketId, setSocketId] = useState(null);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [room, setRoom] = useState(null);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:5000");
+    const newSocket = io("https://chat-app-nuar.onrender.com");
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
@@ -25,12 +26,18 @@ function App() {
     };
   }, []);
 
+  const handleJoinRoom = () => {
+    if (socket) {
+      socket.emit("join-room", room);
+    }
+  };
+
   const sendMessage = () => {
     if (!message.trim()) {
       return;
     }
     if (socket) {
-      socket.emit("message", message);
+      socket.emit("message", message, room);
     }
     setMessage("");
   };
@@ -57,7 +64,18 @@ function App() {
           }
         }}
       />
-      <input type="text" placeholder="Room Number" />
+      <input
+        type="text"
+        placeholder="Room Name"
+        value={room}
+        onChange={(e) => setRoom(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            handleJoinRoom();
+          }
+        }}
+      />
     </div>
   );
 }
