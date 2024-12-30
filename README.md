@@ -1,4 +1,4 @@
-# CodeSnapX
+# CodePiX
 
 A modern, browser-based code editor with real-time syntax highlighting and theme switching capabilities. Share your beautiful code snippets with ease.
 
