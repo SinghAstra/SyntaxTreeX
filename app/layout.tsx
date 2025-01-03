@@ -1,5 +1,8 @@
+import Providers from "@/components/providers/provider";
+import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
 import type { Metadata } from "next";
+import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -50,8 +53,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-background">{children}</body>
-    </html>
+    <body className="antialiased min-h-screen bg-background">
+      <Providers>
+        <NextTopLoader color="hsl(var(--primary))" showSpinner={false} />
+        {children}
+        <Toaster />
+      </Providers>
+    </body>
   );
 }

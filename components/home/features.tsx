@@ -1,8 +1,8 @@
 import { Card } from "@/components/ui/card";
-import { Code, GitBranch, Share2, Zap } from "lucide-react";
+import { ColorVariant, Feature } from "@/interfaces/features";
 import React from "react";
 
-const colorMap = {
+const colorMap: Record<ColorVariant, string> = {
   "stats-blue":
     "bg-stats-blue/20 text-stats-blue from-stats-blue/0 to-stats-blue/5 hover:shadow-stats-blue/10",
   "stats-purple":
@@ -13,37 +13,15 @@ const colorMap = {
     "bg-stats-orange/20 text-stats-orange from-stats-orange/0 to-stats-orange/5 hover:shadow-stats-orange/10",
 };
 
-const features = [
-  {
-    title: "Real-Time Execution",
-    description:
-      "Write and run code instantly in your browser with immediate feedback and results.",
-    icon: Zap,
-    colorClass: "stats-blue",
-  },
-  {
-    title: "Multiple Languages",
-    description:
-      "Support for JavaScript, Python, and more programming languages coming soon.",
-    icon: Code,
-    colorClass: "stats-purple",
-  },
-  {
-    title: "Version Control",
-    description:
-      "Built-in Git-like version control to track your code changes and experiments.",
-    icon: GitBranch,
-    colorClass: "stats-pink",
-  },
-  {
-    title: "Easy Sharing",
-    description: "Share your code snippets and projects with a simple URL.",
-    icon: Share2,
-    colorClass: "stats-orange",
-  },
-];
+interface FeaturesProps {
+  features: Feature[];
+}
 
-function FeatureCard({ feature }) {
+interface FeatureCardProps {
+  feature: Feature;
+}
+
+function FeatureCard({ feature }: FeatureCardProps) {
   const colorClasses = colorMap[feature.colorClass] || colorMap["stats-blue"];
   const [bgClass, textClass, fromClass, toClass, shadowClass] =
     colorClasses.split(" ");
@@ -76,7 +54,7 @@ function FeatureCard({ feature }) {
   );
 }
 
-export function Features() {
+export function Features({ features }: FeaturesProps) {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4 md:px-6">
