@@ -1,23 +1,23 @@
 import { SiteConfig } from "@/interfaces/site";
 
 export const siteConfig: SiteConfig = {
-  name: "CodePiX",
+  name: "SyntaxTreeX",
   description:
-    "A modern, browser-based code editor with real-time syntax highlighting, theme switching, and code sharing capabilities.",
-  tagline: "Capture Code Elegantly.",
-  headline: "Beautiful Code Snippets Made Simple",
-  subHeadline: "Edit, style, and share your code seamlessly.",
-  url: "https://codepix.vercel.app",
+    "SyntaxTreeX is a smart repository analysis tool that provides instant code summaries, AI-ready folder structures, and insightful repository exploration.",
+  tagline: "Explore smarter, not harder.",
+  headline: "Revolutionize how you explore GitHub repositories.",
+  subHeadline:
+    "Get instant insights, clean structures, and AI-ready summaries.",
+  url: "https://syntaxtreex.vercel.app",
   features: [
-    "🎨 Real-time syntax highlighting for multiple programming languages.",
-    "🌈 Multiple color themes with one-click switching.",
-    "📸 Export code as beautiful images.",
-    "📋 Copy code snippets to clipboard.",
-    "💾 Save editor preferences locally for a personalized experience.",
+    "Smart folder structure analysis",
+    "Automated code summaries",
+    "AI-ready output for prompt generation",
+    "History tracking for revisiting analyses",
   ],
   links: {
     twitter: "https://x.com/XSinghAstra",
-    github: "https://github.com/SinghAstra/CodePix",
+    github: "https://github.com/SinghAstra/SyntaxTreeX",
     linkedIn: "https://www.linkedin.com/in/singhastra",
   },
 };

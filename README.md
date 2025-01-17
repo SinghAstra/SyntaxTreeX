@@ -1,51 +1,79 @@
-# CodePix
+# 🔍 SyntaxTreeX - Smart Repository Analysis Tool
 
-A lightweight web-based code editor built with modern technologies for running and visualizing code output in real-time.
+> Explore GitHub repositories smarter, not harder! Get instant code summaries and AI-ready folder structures.
 
-## Tech Stack
+![GitHub last commit](https://img.shields.io/github/last-commit/singhastra/SyntaxTreeX)
 
-- **Frontend Framework**: Next.js 14 (App Router)
-- **UI Components**: shadcn/ui
-- **Code Editor**: CodeMirror 6 (@uiw/react-codemirror)
+## 🚀 About The Project
+
+Goal of SyntaxTreeX is to simplify how developers explore and understand GitHub repositories. Stop wasting time navigating through countless files - get instant, intelligent summaries and structural insights of any GitHub repository.
+
+<!-- TODO: Add a project banner/screenshot here -->
+
+### ✨ Key Features
+
+- 🗂️ **Smart Folder Structure Analysis**: Generate clean, hierarchical views of repository structures
+- 📝 **Automated Code Summaries**: Get instant summaries of files, classes, and functions
+- 🤖 **AI-Ready Output**: Export folder structures in prompt-friendly formats
+- 🔐 **Secure Authentication**: GitHub integration with NextAuth
+- 💾 **History Tracking**: Save and revisit your previous analyses
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: [Next.js 14](https://nextjs.org/) with App Router
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Authentication**: [NextAuth.js](https://next-auth.js.org/)
+- **Database**: [PostgreSQL](https://www.postgresql.org/)
+- **ORM**: [Prisma](https://www.prisma.io/)
+- **Code Analysis**: Abstract Syntax Tree (AST) parsing
 - **Styling**: Tailwind CSS
-- **State Management**: React Hooks (useState, useEffect)
-- **Icons**: Lucide React
 
-## MVP Features
+## 📋 Prerequisites
 
-### Code Editor
+- Node.js 18+
+- PostgreSQL
+- GitHub Account (for API access)
 
-- Syntax highlighting for JavaScript (initial language)
-- Line numbers
-- Basic theme support (dark)
-- Code formatting support
+## 💡 Usage
 
-### Code Execution
+<!-- TODO: Add a GIF or screenshot demonstrating the workflow here -->
 
-- Run code in browser
-- Display console output
-- Show basic errors
-- Clear output functionality
+1. Log in with your GitHub account / Google Account
+2. Paste a GitHub repository URL
+3. Get instant analysis including:
+   - 📁 Complete folder structure
+   - 📝 File summaries
+   - 🔍 Code component analysis
+   - 📊 Repository statistics
 
-### UI/UX
+### Example Output
 
-- Split pane layout (editor | output)
-- Responsive design
-- Run button with keyboard shortcut (Ctrl/Cmd + Enter)
-- Copy code button
-- Clear editor button
+```markdown
+📁 project-root
+└── 📁 src
+├── 📄 App.tsx
+│ └── "Main application component with routing setup"
+└── 📁 components
+├── 📄 Header.tsx
+│ └── "Responsive navigation header with auth integration"
+└── 📄 Footer.tsx
+└── "Footer component with social links"
+```
 
-### Not Included in MVP
+## 🤝 Contributing
 
-- File saving
-- Multiple files
-- Multiple language support
-- User authentication
-- Database integration
+Contributions are what make the open-source community amazing! Any contributions you make are **greatly appreciated**.
 
-## Planned Next Features
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-- Support for additional languages
-- File system integration
-- Code sharing via URL
-- Custom themes
+---
+
+### 🌟 Show your support
+
+Give a ⭐️ if this project helped you!
+
+<!--TODO: Add a fun meme or gif related to code exploration here -->

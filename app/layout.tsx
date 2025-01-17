@@ -53,12 +53,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <body className="antialiased min-h-screen bg-background">
-      <Providers>
-        <NextTopLoader color="hsl(var(--primary))" showSpinner={false} />
-        {children}
-        <Toaster />
-      </Providers>
-    </body>
+    <html>
+      <body className="antialiased min-h-screen bg-background">
+        <Providers>
+          <NextTopLoader color="hsl(var(--primary))" showSpinner={false} />
+          {children}
+          <Toaster />
+        </Providers>
+      </body>
+    </html>
   );
 }
